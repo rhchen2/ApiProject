@@ -25,7 +25,6 @@ public class RyanAPIService {
         // Create HttpEntity with headers (and optionally a request body)
         HttpEntity<String> requestEntity = new HttpEntity<>("Request Body", headers);
 
-
         ResponseEntity<String> response = restTemplate.exchange(
                 API_URL,
                 HttpMethod.GET,
