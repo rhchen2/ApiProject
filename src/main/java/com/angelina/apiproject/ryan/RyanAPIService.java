@@ -3,6 +3,7 @@ package com.angelina.apiproject.ryan;
 import com.angelina.apiproject.ryan.model.Riddle;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -15,12 +16,15 @@ public class RyanAPIService {
 
     private final String API_URL = "https://api.api-ninjas.com/v1/riddles";
 
+    @Value("${API_KEY}") // Assuming API_KEY is set as an environment variable
+    private String apiKey;
+
     public Riddle getRandomRiddle() throws JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
 
         //Create header
         HttpHeaders headers = new HttpHeaders();
-        headers.set("X-Api-Key", "0TSPLOuB0SEtY9i8raxSKw==50crfnuGArXb4KA5");
+        headers.set("X-Api-Key", apiKey);
 
         // Create HttpEntity with headers (and optionally a request body)
         HttpEntity<String> requestEntity = new HttpEntity<>("Request Body", headers);

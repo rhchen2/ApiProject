@@ -15,8 +15,8 @@ public class RyanAPIController {
         this.ryanAPIService = ryanAPIService;
     }
 
-    @GetMapping("/quote")
-    public Riddle getQuote() throws JsonProcessingException {
+    @GetMapping("/riddle")
+    public Riddle getRiddle() throws JsonProcessingException {
 
         Riddle riddle = ryanAPIService.getRandomRiddle();
 
