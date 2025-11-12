@@ -1,5 +1,6 @@
 package com.angelina.apiproject.angelina;
 
+import com.angelina.apiproject.angelina.model.Fact;
 import com.angelina.apiproject.ryan.RyanAPIService;
 import com.angelina.apiproject.ryan.model.Riddle;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -18,15 +19,15 @@ public class AngelinaAPIController {
 
 
     //rename this to what your api does
-    @GetMapping("/quote")
-    public Riddle getQuote() throws JsonProcessingException {
+    @GetMapping("/fact")
+    public Fact getFact() throws JsonProcessingException {
 
-        Riddle riddle = angelinaAPIService.getRandomRiddle(); //change this to whatever your api does
+        Fact fact = angelinaAPIService.getRandomFact(); //change this to whatever your api does
 
         //change what you print out depending on what you api is
-        System.out.print(riddle.getQuestion());
+        System.out.print(fact.getFact());
 
-        return riddle;
+        return fact;
     }
 
 }

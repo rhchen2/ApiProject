@@ -15,14 +15,15 @@ public class RyanAPIController {
         this.ryanAPIService = ryanAPIService;
     }
 
-    @GetMapping("/riddle")
+    @GetMapping("/flowers")
     public Riddle getRiddle() throws JsonProcessingException {
 
         Riddle riddle = ryanAPIService.getRandomRiddle();
 
-        System.out.print(riddle.getQuestion());
+//        System.out.print(riddle.getQuestion());
 
         return riddle;
+
     }
 
 }
